@@ -1,0 +1,24 @@
+---
+- hosts: all
+  sudo: True
+  tasks:
+  
+      - name: install nodejs
+        shell: apt-get install nodejs -y
+
+      - name: install npm
+        shell: apt-get install npm -y
+
+      - name: Disabling ssh
+        shell: npm config set registry http://registry.npmjs.org/
+
+      - name: Moving to the shared folder
+        shell: cd /vagrant
+
+      - name: Installing mocha
+        shell: chdir=/vagrant npm install mocha -g
+
+      - name: Installing should
+        shell: chdir=/vagrant npm install should
+
+                
