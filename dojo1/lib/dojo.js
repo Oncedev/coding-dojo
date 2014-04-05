@@ -10,7 +10,11 @@ var dojo = {
 					total +=1;		
 					break;
 				case 'V':
-					total+= this.calcularValor("I", temp, 5);
+					if (temp=="I"){
+						total+=3;
+					}else{
+						total+=5;
+					}
 					break;
 				case 'X':
 					if (temp=="I"){
@@ -58,18 +62,6 @@ var dojo = {
 
 		return total;
 		
-	},
-
-	calcularValor: function (excessao, temp, valordf){
-		var tabela = {
-			"I": 1
-		};
-
-		if(temp == excessao) {
-			return valordf - 2* tabela[excessao];
-		}
-
-		return valordf;
 	}
 };
 
